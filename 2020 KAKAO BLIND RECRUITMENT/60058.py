@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# 2021.5.16 풀이
 # https://programmers.co.kr/learn/courses/30/lessons/60058
 
 def uvmaker(w):
