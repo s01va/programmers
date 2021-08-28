@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 def solution(new_id):
-    answer = ''
     allowed_spcstr = ['-', '_', '.']
     
     # 1단계
     id1step = new_id.lower()
-    print("1step:", id1step)
+    #print("1step:", id1step)
 
     # 2단계
     id2step = ""
@@ -17,7 +16,7 @@ def solution(new_id):
         # 허용 특수문자 여부 확인
         if ch in allowed_spcstr:
             id2step = id2step + ch
-    print("id2step:", id2step)
+    #print("id2step:", id2step)
 
     # 3단계
     id3step = id2step
@@ -26,26 +25,45 @@ def solution(new_id):
         if tmp == id3step:
             break
         id3step = tmp
-    print(id3step)
+    #print("id3step:", id3step)
 
     # 4단계
     id4step = id3step
-    if id4step
 
-    return answer
+    if id4step[0] == '.':
+        id4step = id4step[1:]
+    if len(id4step) > 0:
+        if id4step[-1] == '.':
+            id4step = id4step[:-1]
+    #print("id4step:", id4step)
 
-solution("...!@BaT#*..y.abcdefghijklm")
+    # 5단계
+    id5step = id4step
+    if len(id5step) == 0:
+        id5step = "a"
+    #print("id5step:", id5step)
 
-# ord('-'): 45
-# ord('.'): 46
+    # 6단계
+    id6step = id5step
+    if len(id6step) >= 16:
+        id6step = id6step[:15]
+    if id6step[-1] == '.':
+        id6step = id6step[:-1]
+    #print("id6step:", id6step)
 
-# ord('0'): 48
-# ord('9'): 57
+    # 7단계
+    id7step = id6step
+    if len(id7step) <= 2:
+        while len(id7step) < 3:
+            id7step += id7step[-1]
 
-# ord('A'): 65
-# ord('Z'): 90
+    #print("id7step:",id7step)
+    return id7step
 
-# ord('_'): 95
+inputstr = "...!@BaT#*..y.abcdefghijklm"
+#inputstr = "z-+.^."
+#inputstr = "=.="
+#inputstr = "123_.def"
+#inputstr = "abcdefghijklmn.p"
 
-# ord('a'): 97
-# ord('z'): 122
+solution(inputstr)
