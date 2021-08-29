@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# https://programmers.co.kr/learn/courses/30/lessons/72411
+
 def solution(new_id):
     allowed_spcstr = ['-', '_', '.']
     
